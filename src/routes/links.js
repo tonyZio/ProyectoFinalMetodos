@@ -10,4 +10,5 @@ router.get('/cursos', (req, res) => {
 router.post('/add', (req, res) =>{
     res.send('recieved');
 })
+
 module.exports = router;
