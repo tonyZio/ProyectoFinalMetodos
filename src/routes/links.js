@@ -65,24 +65,23 @@ router.get('/delete/:id', async (req, res) =>{
    res.redirect('/links/maestros')
 })
 
-//Edit
-
+//EditCourses
 router.get('/edit/:id', async (req, res) => {
     const {id} = req.params;
-    const teachers = await pool.
-    query('SELECT * FROM teachers WHERE ID = ?', [id])
-    res.render('/edit',{teacher:teachers[0]} )
+    const teachers = await pool.query('SELECT * FROM teachers WHERE ID = ?', [id])
+    console.log(teachers);
+    res.render('links/edit', {teacher:teachers[0]})
+     
 })
 
 router.post('/edit/:id', async(req, res) =>{
     const {id} = req.params;
-    const {
-        username,
-        password
-    } = req.body;
+    const {username,password} = req.body;
 
     const newLink = {username, password};
-    await pool.query('UPDATE teachers set ? WHERE id = ?', [newLink, id]);
+    await pool.query('UPDATE teachers set ? WHERE id = ?', 
+    [newLink, id]);
+    
     res.redirect('/add')
 })
 

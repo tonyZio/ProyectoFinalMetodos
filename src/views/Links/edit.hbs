@@ -1,10 +1,10 @@
 
  <div class = "card mx-auto">
- <form action="../links/edit/:id" method = "post" > 
+ <form action="../links/edit/:id" method = "POST" > 
         <h1 class="form-title">Ingreso</h1>  
           
-        <input type="text" value ="{{teacher.username}}" name = "username" placeholder="E-Mail" autofocus> 
-        <input type="text" value ="{{teacher.password}}" name = "password" placeholder="Password">
+        <input type="text" value = {{teacher.username}} name = "username" placeholder="E-Mail" autofocus> 
+        <input type="text" value = {{teacher.password}} name = "password" placeholder="Password">
         <br>
         <button class ="btn btn-success btn-block" type="submit" placeholder="Aceptar">Aceptar</button>
            
