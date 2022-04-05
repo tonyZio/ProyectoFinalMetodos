@@ -47,4 +47,7 @@ ALTER TABLE links
 ALTER TABLE teachers   
     MODIFY password VARCHAR (30) NULL;
 
+ALTER TABLE courses   
+    MODIFY description VARCHAR (60) NULL;
+
 DESCRIBE links;
