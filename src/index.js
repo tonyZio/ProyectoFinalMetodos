@@ -6,9 +6,11 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const MYSQLSTORE = require('express-mysql-session');
 const {database} = require('./keys');
+const passport = require('passport');
 
 //init
 const app = express();
+require('./lib/passport');
 
 //Settings
 app.set('port', process.env.PORT || 3001);
@@ -34,6 +36,8 @@ app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 //Global

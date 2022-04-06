@@ -4,14 +4,14 @@
             <div class="col-md-3">
                     <div class="card text-center">
                         <div class ="card-body">
-                            <a href = "{{password}}" target = "_blank">
+                            <a href = "{{name}}" target = "_blank">
                                 <h3 class = "card-title text-uppercase">
-                                      {{username}}  
+                                      {{schedule}}  
                                 </h3>
                             </a>
                             <p class = "m-2"></p>
-                            <a href = "/links/delete/{{id}}" class = "btn btn-danger">Borrar Maestro</a>
-                             <a href = "/links/edit/{{id}}" class = "btn btn-secondary">Editar Maestro</a>
+                            <a href = "/links/delete/{{id}}" class = "btn btn-danger">Borrar Curso</a>
+                             <a href = "/links/edit/{{id}}" class = "btn btn-secondary">Editar Curso</a>
                         </div>
                     </div>
 
@@ -19,8 +19,8 @@
             {{else}}
             <div class="col-md-4 mx-auto">
                 <div class="card card-body text-center">
-                    <p>Sin maestros registrados.</p>
-                    <a href = "/links/add">Crear Maestro</a>
+                    <p>Sin cursos registrados.</p>
+                    <a href = "/links/addcursos">Crear Curso</a>
                 </div>
             </div>
         {{/each}}
