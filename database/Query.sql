@@ -1,23 +1,29 @@
 CREATE DATABASE databse_links;
 
-USE  
+UE  
 
 CREATE TABLE teachers (
     id INT(5) NOT NULL,
     username VARCHAR (25) NOT NULL,
     password VARCHAR (30)  NOT NULL
+    CONSTRAINT fk_courses FOREIGN KEY (courses_id) REFERENCES courses(id) 
 );
 
 CREATE TABLE courses  (
     id INT(5) NOT NULL,
     name VARCHAR (25) NOT NULL,
-    schedule VARCHAR (30)  NOT NULL
+    schedule VARCHAR (30)  NOT NULL,
+    semester VARCHAR (10) NULL,
+    hour VARCHAR (10) NULL,
+    CONSTRAINT fk_teacher FOREIGN KEY (teacher_id) REFERENCES teachers(id) 
 );
 
 CREATE TABLE students  (
     id INT(5) NOT NULL,
     name VARCHAR (25) NOT NULL,
     schedule VARCHAR (30)  NOT NULL
+    CONSTRAINT fk_teacher FOREIGN KEY (teacher_id) REFERENCES teachers(id) 
+    CONSTRAINT fk_courses FOREIGN KEY (courses_id) REFERENCES courses(id) 
 );
 
 ALTER TABLE teachers
@@ -48,6 +54,7 @@ ALTER TABLE teachers
     MODIFY password VARCHAR (30) NULL;
 
 ALTER TABLE courses   
-    MODIFY description VARCHAR (60) NULL;
+    ADD semester VARCHAR (10) NULL;
+    ADD hour VARCHAR (10) NULL;
 
 DESCRIBE links;
