@@ -5,7 +5,7 @@ UE
 CREATE TABLE teachers (
     id INT(5) NOT NULL,
     username VARCHAR (25) NOT NULL,
-    password VARCHAR (30)  NOT NULL
+    password VARCHAR (80)  NOT NULL
     CONSTRAINT fk_courses FOREIGN KEY (courses_id) REFERENCES courses(id) 
 );
 
@@ -51,7 +51,7 @@ ALTER TABLE links
     MODIFY id INT(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 2;
 
 ALTER TABLE teachers   
-    MODIFY password VARCHAR (30) NULL;
+    MODIFY password VARCHAR (80) NULL;
 
 ALTER TABLE courses   
     ADD semester VARCHAR (10) NULL;

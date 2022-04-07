@@ -12,12 +12,19 @@ passport.use('local.singup', new LocalStrategy({
         username,
         password
     };
-
     newUser.password =  await helpers.encryptPassword(password);
 
     const result = await pool.query('INSERT into teachers SET ?', [newUser]);
-    console.log(result);
+    newUser.id = result.insertId;
+    return done(null, newUser);
 
 }));
 
+passport.serializeUser((usr, done) => {
+    done(null, user.id);
+});
 
+passport.deserializeUser(async (id, done) =>{
+    const filas = await pool.query('SELECT * FROM teachers WHERE id = ?', [id]);
+    done(null, filas[0]);
+})
