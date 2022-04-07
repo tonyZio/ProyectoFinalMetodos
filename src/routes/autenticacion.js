@@ -18,4 +18,5 @@ router.post('/singup', (req, res) =>{
 router.get('/profile', (req, res) => {
     res.send('Perfin')
 })
+
 module.exports = router;
