@@ -1,5 +1,6 @@
 <div class = "container p-4">
     <div class = "row">
+        
         {{#each links}}
             <div class="col-md-3">
                     <div class="card text-center">
@@ -15,16 +16,20 @@
                         </div>
                     </div>
 
+                    
+
             </div>
+            
             {{else}}
             <div class="col-md-4 mx-auto">
                 <div class="card card-body text-center">
                     <p>Sin maestros registrados.</p>
-                    <a href = "/links/add">Crear Maestro</a>
+                    <a href = "/singup">Crear Maestro</a>
                 </div>
             </div>
         {{/each}}
-
+ <a href = "/singup" class = "btn btn-primary">Agregar Maestro</a>
     </div>
+   
     
 </div>

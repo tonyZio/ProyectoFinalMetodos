@@ -7,10 +7,12 @@ const session = require('express-session');
 const MYSQLSTORE = require('express-mysql-session');
 const {database} = require('./keys');
 const passport = require('passport');
+const bodyParser = require('body-parser');
+
 
 //init
 const app = express();
-require('./lib/passport');
+require('./lib/passport')
 
 //Settings
 app.set('port', process.env.PORT || 3001);
@@ -28,10 +30,10 @@ app.set('view engine', '.hbs');
 //Middlewares
 app.use(session({
     secret: 'sessionsqlnode',
-    resave: 'false',
-    saveUninitialized: 'false',
+    resave: false,
+    saveUninitialized: false,
     store: new MYSQLSTORE(database)
-}))
+}));
 app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
@@ -42,8 +44,10 @@ app.use(passport.session());
 
 //Global
 app.use((req, res, next) =>{
+    app.locals.message = req.flash('message');
     app.locals.success = req.flash('success')
-    next()
+    app.locals.teacher = req.teacher;
+    next();
 })
 
 //Routes

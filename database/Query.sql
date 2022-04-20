@@ -47,14 +47,43 @@ CREATE TABLE links (
 ALTER TABLE links
     ADD PRIMARY KEY (id);
 
-ALTER TABLE links
-    MODIFY id INT(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 2;
+ALTER TABLE students
+    MODIFY id INT(5) PRIMARY_KEY NOT NULL  AUTO_INCREMENT, AUTO_INCREMENT = 2;
+
+ALTER TABLE courses
+    RENAME COLUMN hour TO hourBegg;
 
 ALTER TABLE teachers   
     MODIFY password VARCHAR (80) NULL;
 
 ALTER TABLE courses   
-    ADD semester VARCHAR (10) NULL;
-    ADD hour VARCHAR (10) NULL;
+    ADD hourFinn VARCHAR (10) NULL;
 
 DESCRIBE links;
+
+
+Llaves foraneas:
+
+ALTER TABLE students
+    ADD PRIMARY KEY id;
+
+ALTER TABLE students   
+    ADD teacher_id INT (5) NULL;
+
+ALTER TABLE students
+    ADD FOREIGN KEY (teacher_id) REFERENCES teachers(id);
+
+
+ALTER TABLE students   
+    ADD courses_id INT (5) NULL;
+
+ALTER TABLE students
+ADD FOREIGN KEY (courses_id) REFERENCES courses(id);
+
+ALTER TABLE teachers
+ADD FOREIGN KEY (students_id) REFERENCES students(id);
+
+ALTER TABLE students
+
+
+    
