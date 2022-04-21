@@ -26,8 +26,14 @@ router.post('/signin', (req, res, next) => {
     })(req, res, next);
 });
 
-router.get('/profile', (req, res) => {
+router.get('/profile', isLoggedIn, (req, res) => {
     res.render('profile');
+})
+
+router.get('/logout', (req, res) =>{
+    res.render('logout')
+    req.logOut();
+
 })
 
 module.exports = router;
