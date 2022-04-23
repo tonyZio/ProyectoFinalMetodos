@@ -80,10 +80,27 @@ ALTER TABLE students
 ALTER TABLE students
 ADD FOREIGN KEY (courses_id) REFERENCES courses(id);
 
+ALTER TABLE teachers   
+    ADD students_id INT (5) NULL;
+
 ALTER TABLE teachers
-ADD FOREIGN KEY (students_id) REFERENCES students(id);
-
-ALTER TABLE students
+    ADD FOREIGN KEY (students_id) REFERENCES students(id);
 
 
-    
+ALTER TABLE courses
+ADD PRIMARY KEY (id);
+
+ALTER TABLE courses
+    DROP COLUMN schedule;
+
+ALTER TABLE courses
+ADD days varchar(30);
+
+
+SET FOREIGN_KEY_CHECKS = 1;
+ALTER TABLE courses MODIFY id int NOT NULL AUTO_INCREMENT;
+SET foreign_keys_checks = 1;
+
+ALTER TABLE teachers MODIFY id int NOT NULL AUTO_INCREMENT;
+ALTER TABLE students MODIFY id int NOT NULL AUTO_INCREMENT;
+

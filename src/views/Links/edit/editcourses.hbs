@@ -1,23 +1,23 @@
 
  <div class="container">
  <div class = "card mx-auto">
- <form action="../links/add" method = "post" > 
+ <form action="../links/editCourse/{{course.id}}" method = "POST" > 
         <h1 class="form-title">Creación de Cursos</h1>
 
         <label for="uname"><b>Nombre de la clase</b></label> 
-        <input type="text" name = "name" placeholder="Nombre" autofocus> 
+        <input type="text" name = "name" value ={{course.name}}> 
         
         <label for="appt">Horario</label>
 
-        <input type="time" id="apptBegg" name="apptBegg"
-            min="07:00" max="22:00" required>
+        <input type="time" id="hourFinn" name="hourBegg"
+            value = {{course.hourBegg}} required>
 
-        <input type="time" id="apptFin" name="apptFin"
-        min="07:00" max="22:00" required>
+        <input type="time" id="hourFinn" name="hourFinn"
+        value = {{course.hourFinn}} required>
 
-        <label for="semestre">Semestre</label>
+        <label for="semester">Semestre</label>
 
-            <select name="semestre" id="semestre">
+            <select name="semester" id="semester">
                 <option value="1er">1er</option>
                 <option value="2do">2do</option>
                 <option value="3ro">3ro</option>
@@ -29,7 +29,7 @@
             </select>
 
         <label for="uname"><b>Dias (Lu, Ma, Mi, Ju, Vi, Sa)</b></label> 
-        <input type="text" name = "days" placeholder="dias"> 
+        <input type="text" name = "days" value = {{course.days}}> 
         
         <button class ="btn btn-success btn-block" type="submit" placeholder="Aceptar">Aceptar</button>
            
