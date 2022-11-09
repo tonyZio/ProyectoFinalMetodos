@@ -3,8 +3,8 @@
  <form action="/links/edit/{{teacher.id}}" method = "POST" > 
         <h1 class="form-title">Ingreso</h1>  
           
-        <input type="text" value = {{teacher.username}} name = "username" placeholder="E-Mail" autofocus> 
-        <input type="text" value = {{teacher.password}} name = "password" placeholder="Password">
+        <input type="text" maxlength="55"  value = {{teacher.username}} name = "username" placeholder="E-Mail" autofocus> 
+        <input type="text" maxlength="55"  value = {{teacher.password}} name = "password" placeholder="Password">
         <br>
         <button class ="btn btn-success btn-block" type="submit" placeholder="Aceptar">Aceptar</button>
            

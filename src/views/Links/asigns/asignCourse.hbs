@@ -1,0 +1,24 @@
+
+ <div class="container">
+ <div class = "card mx-auto">
+ <form action="../asignCourse/{{student.id}}" method = "POST" > 
+        <h1 class="form-title">Asignacion de Cursos</h1>
+            
+       <input type="text" value = {{student.name}} name = "name" placeholder="E-Mail" autofocus> 
+       <input type="text" value = {{student.semester}} name = "semester" placeholder="Password">
+
+        <label for="courses">Cursos</label>
+       
+            <select name="groups_id" id="groups_id"> 
+                {{#each groups}}       
+                    <option id="groups_id" value= {{id_num}}>{{hours}} a {{hourFinn}}</option>  
+                {{/each}}
+            </select>
+        
+        <button class ="btn btn-success btn-block" type="submit" placeholder="Aceptar">Aceptar</button>
+           
+        </button>
+        
+    </form> 
+</div>
+</div>

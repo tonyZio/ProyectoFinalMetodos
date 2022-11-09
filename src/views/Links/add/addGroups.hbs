@@ -1,0 +1,26 @@
+<div class = "container p-4">
+    <div class = "row">
+    <form action="../addgroup/{{course.id}}" method = "POST" > 
+        <h1 name= "course_id" id = "course_id">Creación de grupo </h1> 
+
+      <label for="uname">Dias (Lu, Ma, Mi, Ju, Vi, Sa)</label> 
+      <input type="text" name = "days" required> 
+      <h3>Horario</h3>
+        <label for="uname">Hora de Inicio</label> 
+        <input type="time" id="hours" name="hours"
+            min="07:00" max="21:00" required>
+
+        <label for="uname">Hora Final</label> 
+        <input type="time" id="hourFinn" name="hourFinn"
+        min="07:00" max="22:00" required>
+        <br>
+        <label for="uname">Materia Seleccionada</label> 
+         <select name="courses_id" id="courses_id"> 
+        <option id="courses_id" value= {{course.id}}>{{course.name}}</option>  
+         </select>
+        <button class ="btn btn-success btn-block" type="submit" placeholder="Aceptar">Aceptar</button>
+           
+        </button>
+    </form> 
+</div>
+</div>

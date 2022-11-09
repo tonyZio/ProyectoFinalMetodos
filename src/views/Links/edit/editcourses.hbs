@@ -1,19 +1,11 @@
 
  <div class="container">
  <div class = "card mx-auto">
- <form action="../links/editCourse/{{course.id}}" method = "POST" > 
+ <form action="../editcourses/{{courses.id}}" method = "POST" > 
         <h1 class="form-title">Creación de Cursos</h1>
 
         <label for="uname"><b>Nombre de la clase</b></label> 
-        <input type="text" name = "name" value ={{course.name}}> 
-        
-        <label for="appt">Horario</label>
-
-        <input type="time" id="hourFinn" name="hourBegg"
-            value = {{course.hourBegg}} required>
-
-        <input type="time" id="hourFinn" name="hourFinn"
-        value = {{course.hourFinn}} required>
+        <input type="text" maxlength="35" name = "name" id = "name" value ={{courses.name}}> 
 
         <label for="semester">Semestre</label>
 
@@ -28,8 +20,7 @@
                 <option value="8vo">8vo</option>
             </select>
 
-        <label for="uname"><b>Dias (Lu, Ma, Mi, Ju, Vi, Sa)</b></label> 
-        <input type="text" name = "days" value = {{course.days}}> 
+        
         
         <button class ="btn btn-success btn-block" type="submit" placeholder="Aceptar">Aceptar</button>
            
@@ -37,4 +28,4 @@
         
     </form> 
 </div>
- </div>
+</div>

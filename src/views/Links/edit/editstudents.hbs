@@ -1,16 +1,10 @@
-
- <div class="container">
+<div class="container">
  <div class = "card mx-auto">
- <form action="../links/addcursos" method = "POST" > 
-        <h1 class="form-title">Creación de Cursos</h1>
+ <form action="../editstudents/{{student.id}}" method = "POST" > 
+    <h1 for="appt">Alumno</h1>
 
-        <label for="uname"><b>Nombre de la clase</b></label> 
-        <input type="text" maxlength="35" name = "name" placeholder="Nombre" autofocus> 
-        
-
-        <label for="semester">Semestre</label>
-
-            <select name="semester" id="semester">
+        <input type="text"  maxlength="55" value = {{student.name}} name = "name" placeholder="E-Mail" autofocus> 
+        <select name="semester" id="semester">
                 <option value="1er">1er</option>
                 <option value="2do">2do</option>
                 <option value="3ro">3ro</option>
@@ -19,12 +13,14 @@
                 <option value="6to">6to</option>
                 <option value="7mo">7mo</option>
                 <option value="8vo">8vo</option>
-            </select>
-        
+        </select>
+
+
+
+
         <button class ="btn btn-success btn-block" type="submit" placeholder="Aceptar">Aceptar</button>
            
         </button>
-        
-    </form> 
-</div>
+ </form>
+ </div>
  </div>

@@ -1,12 +1,10 @@
+<div class="container">
+<div class = "card mx-auto">
+<form action="../links/addalumno" method = "POST" > 
+<h1 class="form-title">Registro de Alumnos</h1>  
 
- <div class="container">
- <div class = "card mx-auto">
- <form action="../links/addcursos" method = "POST" > 
-        <h1 class="form-title">Creación de Cursos</h1>
-
-        <label for="uname"><b>Nombre de la clase</b></label> 
-        <input type="text" maxlength="35" name = "name" placeholder="Nombre" autofocus> 
-        
+        <label for="name">Nombre del Alumno</label>  
+        <input type="text" maxlength="55"  name = "name" placeholder="Nombre" autofocus> 
 
         <label for="semester">Semestre</label>
 
@@ -20,7 +18,10 @@
                 <option value="7mo">7mo</option>
                 <option value="8vo">8vo</option>
             </select>
-        
+
+
+        <br>
+
         <button class ="btn btn-success btn-block" type="submit" placeholder="Aceptar">Aceptar</button>
            
         </button>

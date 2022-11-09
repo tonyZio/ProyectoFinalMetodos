@@ -13,7 +13,6 @@ passport.use('local.signin', new LocalStrategy({
     if(rows.length > 0){
         const teacher = rows[0];
         const validPassword = await helpers.matchPassword(password, teacher.password)
-
         if(validPassword){
             done(null, teacher);
         } else {
@@ -31,12 +30,12 @@ passport.use('local.signup', new LocalStrategy({
     passReqToCallback: true
 }, async (req, username, password, done) => {
     
-    const newUser = {
+    let newUser = {
         username,
         password
     }
     newUser.password = await helpers.encryptPassword(password);
-    const result = await pool.query('INSERT INTO teachers SET ?', [newUser])
+    const result = await pool.query('INSERT INTO teachers SET ?', newUser)
     newUser.id = result.insertId;
     return done(null, newUser);
 
