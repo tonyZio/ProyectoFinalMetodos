@@ -1,6 +1,6 @@
 CREATE DATABASE databse_links;
 
-UE  
+USE  
 
 CREATE TABLE teachers (
     id INT(5) NOT NULL,
